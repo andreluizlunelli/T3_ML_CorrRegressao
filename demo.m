@@ -22,9 +22,9 @@ figure(1);
 scatter (x1, y1, "r");
 hold on;
 plot(x1,c1);
-title (strcat("Correlação: ", num2str(r1)));
+title (strcat("Correlação: ", num2str(r1)
+      ,"; Regressão: ", num2str(p01), ", ", num2str(p11)));
 
-%todo: colocar betas no titulos
 %------- x2, y2 -------%
 r2 = correlacao(x2, y2);  %titulo
 [p02, p12, c2] = regressao(x2, y2);
@@ -33,7 +33,8 @@ figure(2);
 scatter (x2, y2, "r");
 hold on;
 plot(x2,c2);
-title (strcat("Correlação: ", num2str(r2)));
+title (strcat("Correlação: ", num2str(r2)
+      ,"; Regressão: ", num2str(p02), ", ", num2str(p12)));
 
 %------- x3, y3 -------%
 r3 = correlacao(x3, y3);  %titulo
@@ -43,5 +44,6 @@ figure(3);
 scatter (x3, y3, "r");
 hold on;
 plot(x3,c3);
-title (strcat("Correlação: ", num2str(r3)));
+title (strcat("Correlação: ", num2str(r3)
+      ,"; Regressão: ", num2str(p03), ", ", num2str(p13)));
 
