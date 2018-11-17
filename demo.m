@@ -1,3 +1,4 @@
+%André e Karin
 close all; clc; clear;
 
 x1 = [10;8;13;9;11;14;6;4;12;7;5]; 

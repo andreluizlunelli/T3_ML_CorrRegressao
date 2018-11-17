@@ -1,4 +1,4 @@
-%
+%André e Karin
 function [p0, p1, c] = regressao(x, y)
   p1 = sum((x-mean(x)) .* (y-mean(y))) / sum(((x-mean(x)).^2));
   p0 = mean(y) - (p1 .* mean(x));

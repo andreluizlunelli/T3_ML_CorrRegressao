@@ -1,3 +1,6 @@
+%André e Karin
+close all; clc; clear;
+
 l = load("data.mat");
 K = l.data;
 
@@ -18,5 +21,7 @@ clf;
 figure(1);
 scatter3 (X(:,2), X(:,3), y, "r");
 hold on;
-plot3(X(:,2), X(:,3),regressao);
-%TODO: X label colocar titulos no gráfico  
+xlabel('Tamanho');
+ylabel('N de Quartos');
+zlabel('Preço');
+plot3(X(:,2), X(:,3),regressao); 
