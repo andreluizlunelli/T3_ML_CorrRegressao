@@ -1,4 +1,12 @@
 %André e Karin
+#{
+
+Respostas:
+g) Regressão para N = 8
+
+k) Regressão para N = 8
+
+#}
 close all; clc; clear;
 
 l = load("data_preg.mat");
@@ -37,7 +45,6 @@ plot(x,y3,'r');
 [eqm2] = eqm(y, y2);
 [eqm3] = eqm(y, y3);
 
-disp("----- Erro Quadrático Médio Total -----");
 disp(sprintf('EQM 2 pontos: %d', eqm1));
 disp(sprintf('EQM 3 pontos: %d', eqm2));
 disp(sprintf('EQM 8 pontos: %d', eqm3));
@@ -59,27 +66,26 @@ p11 = polyfit(xTrein, yTrein, 2);
 p11 = fliplr(p11);
 %Regressão 
 y11 = p11(1) + (p11(2)*xTrein) + (p11(3)*xTrein.^2);
-plot(xTrein,y11,'b');
+%plot(xTrein,y11,'b');
 
 %Polinomial
 p22 = polyfit(xTrein, yTrein, 3);
 p22 = fliplr(p22);
 %Regressão 
 y22 = p22(1) + (p22(2)*xTrein) + (p22(3)*xTrein.^2) + (p22(4)*xTrein.^3);
-plot(xTrein,y22,'b');
+%plot(xTrein,y22,'b');
 
 %Polinomial
 p33 = polyfit(xTrein, yTrein, 8);
 p33 = fliplr(p33);
 %Regressão 
 y33 = p33(1) + (p33(2)*xTrein) + (p33(3)*xTrein.^2) + (p33(4)*xTrein.^3) + (p33(5)*xTrein.^4) + (p33(6)*xTrein.^5) + (p33(7)*xTrein.^6)+ (p33(8)*xTrein.^7)+ (p33(9)*xTrein.^8);
-plot(xTrein,y33,'b');
+%plot(xTrein,y33,'b');
 
 [eqm11] = eqm(yTrein, y11);
 [eqm22] = eqm(yTrein, y22);
 [eqm33] = eqm(yTrein, y33);
 
-disp("----- Erro Quadrático Teste -----");
-disp(sprintf('EQM 2 pontos: %d', eqm11));
-disp(sprintf('EQM 3 pontos: %d', eqm22));
-disp(sprintf('EQM 8 pontos: %d', eqm33));
+disp(sprintf('Teste - EQM 2 pontos: %d', eqm11));
+disp(sprintf('Teste - EQM 3 pontos: %d', eqm22));
+disp(sprintf('Teste - EQM 8 pontos: %d', eqm33));
